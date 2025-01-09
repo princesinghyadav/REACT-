@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <style>
+ #mess{
+    border: 5px solid blueviolet
+    
+ }
+
+
+  </style>
+  <body>
+    <div id="root">
+    </div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // My Code goes here;
+    let update={count:0 };
+     function set(state){
+        Object.assign(update,state)
+console.log(state.count)
+renderapp()
+     }
+
+
+function App (){
+    function credit(){
+        set({count: update.count+100})
+         
+    }
+    return(
+        <>
+        <h2> count :{update.count} </h2>
+        <button onClick={credit}> credit 100</button>
+        </> 
+    )
+}
+
+    let roor =ReactDOM.createRoot(document.getElementById("root"))
+ function renderapp(){
+    roor.render(<App/>)
+ }
+    
+ renderapp()
+</script>
+</html>
+<!-- 
+
+this example for if any bank acoount you want to increase the 
+bank balance .
+but earlier we just increasing somewhere else 
+not at that object key.
+
+ -->

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boilerplate Code</title>
+  </head>
+  <style>
+    #score{
+        
+        display: flex;
+        width: 70%;
+        justify-content: space-around;
+        margin-top: 100px;
+        margin-left: 250px;
+        height: 400px;
+    }
+    #score>div{
+ 
+ height: 400px;
+ width: 40%;
+ padding-left: 135px;
+ background-color: grey
+ 
+    }
+    .button{
+        height: 65px;
+        width :auto
+         
+
+       
+    }
+  </style>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Code goes here
+
+
+    function  Run (){
+        let [score, incscore]= React.useState(0)
+    let three=()=>{
+incscore(score+3)
+    }
+    let four=()=>{
+        incscore(score+4)
+    }
+    let eight=()=>{
+        incscore(score+8)
+    }
+
+        return (
+            <div>
+                <div> <h1>SCORE : <span style= {{color:"red"}}>{score}</span></h1></div>
+                <div><button  className="button" onClick={three}><h2> Increase runs by 3</h2></button>
+                <button className="button" onClick={four}><h2> Increase runs by 4</h2></button>
+                </div>
+                <button className="button" onClick={eight}><h2> Increase runs by 8</h2></button>
+                </div>
+        )
+    }
+
+    function Wicket(){
+        let [initial,high]=React.useState(0)
+   let wicket=()=>{
+    high(initial+1)
+   }
+   function Init(props){
+    return(
+        <div><h1> WICKET :{ props.initial <10 
+            ? (`${props.initial}` ):  "All Out" } </h1></div>
+    )
+   }
+
+        return(
+            <div>
+                <Init initial={initial}/>
+             
+        <button className="button"onClick={wicket}><h2>Update wicket</h2> </button>
+            
+        </div>
+        )
+    }
+    function Scoreboard (){
+        return(
+
+        
+        <div id="score">
+            <Run/>
+        <Wicket/>
+    </div>
+        )
+}
+ let roor =ReactDOM.createRoot(document.getElementById("root"))
+   roor.render(<Scoreboard/>)
+
+
+  </script>
+</html>

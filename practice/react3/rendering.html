@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <style>
+#mess{
+    border: 3px solid green;
+}
+
+  </style>
+  <body>
+    <div id="roots"></div>
+    <div id="root">
+    </div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // My Code goes here;
+   
+ function Message(props){
+  return (
+    <div id="mess">
+    <h2> Name: {props.name}</h2>
+    <h2> Hobbies: {props.hobbies.join("+")} </h2>
+    <h2>Hasuperpowers:{props.Hasuperpowers}</h2>
+    <div style={{color:" red "}}>
+    <h2>Street: {props.address.Street}</h2>
+    <h2>City:{props.address.City}</h2>
+    <h2> Country :{props.address.Country}</h2>
+
+    </div>
+    <h2> Age:{props.age}</h2>
+    <h2>Time: </h2>
+  </div>
+    )
+ }
+   function App(){
+    return (
+        <>
+     <Message  name="Batman"
+     hobbies={ ["Fighting Crime ","Buying Hotels"]}
+     Hasuperpowers={false}
+     address= {{
+        Street:"arkham street",
+        City: "Gotham",
+        Country:"USA"
+
+     }}
+     age={125}
+     
+
+     />
+     <Message  name="young man "
+     hobbies={ ["Fighting Crime ","Buying Hotels"]}
+     Hasuperpowers={false}
+     address= {{
+        Street:"arkham street",
+        City: "Gotham",
+        Country:"USA"
+
+     }}
+     age={125}
+
+     />
+     
+     </>
+    )
+   }
+
+
+
+    let rooq=ReactDOM.createRoot(document.getElementById("root"))
+
+rooq.render(<App/>)
+
+let roor=ReactDOM.createRoot(document.getElementById("roots"))
+    function Time (){
+    
+    const time = new Date().toLocaleTimeString()
+    
+const Element =(
+    <>
+    <h1> digital clock</h1>
+<h1> {time}</h1>
+</>
+    )
+    roor.render(Element)
+}
+setInterval(Time,1000)
+  </script>
+</html>
+<!-- 
+
+    this example for how to create 100 og object or data and another of react component 
+    or u can say that rendering method or styling methid
+ -->

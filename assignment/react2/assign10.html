@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <body>
+    <div id="root">
+    </div>
+    assignment9
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+
+
+
+function  Converte() {
+    return (
+        < >
+        <input id="cel" placeholder="enter the celsius" type="text" />
+         <h3 id="result">Farheineit  </h3>
+         <button  onClick={result}>RESULT </button>
+            </>
+    )
+    }
+    function result(){
+        let inp=document.getElementById("cel")
+        let result=document.getElementById("result")
+        let digit=inp.value;
+        let far= (digit*1.8)+32 ;
+        result.textContent=far +"farhenheit ";
+        console.log(digit)
+
+    }
+    let root=document.getElementById("root")
+      let btnn=ReactDOM.createRoot(root)
+  btnn.render(<Converte/>)
+  </script>
+
+  </html>  

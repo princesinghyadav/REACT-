@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <body>
+    <div id="root">
+    </div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // My Code goes here;
+
+
+    function App(){
+        let [balance,setbalance]=   React.useState(0)
+     let [bala,setbala]=React.useState(1000)
+     console.log( bala, setbala)
+let set=()=>{
+setbala(bala*2)
+}
+        return(
+            <>
+            <h3>count :{balance}</h3>
+            <button onClick={ function (){
+                setbalance(balance+5)
+            }}> count+5</button>
+            <h2> counting :{bala}</h2>
+            <button onClick={set}>money * 2</button>
+            </>
+        )
+    }
+
+    let roor =ReactDOM.createRoot(document.getElementById("root"))
+roor.render(<App/>)
+</script>
+</html>

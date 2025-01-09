@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSX and Babel</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your JSX code here
+//   normol level 
+let para = (
+    <p> seize the day</p>
+)
+    
+//  INTERMEDIATE LEVEL
+
+let inter="seize the day";
+
+let intermediate=(
+    <p>{inter}</p>
+)
+     
+
+// ADVANCE LEVEL
+
+let tru=true;
+let fal=false;
+ 
+// here is the render option where you can rend anytrhing fromm the given option 
+    let paragraph= ReactDOM.createRoot((document.getElementById("root")))
+    paragraph.render(intermediate)
+
+
+
+
+  </script>
+</body>
+</html>

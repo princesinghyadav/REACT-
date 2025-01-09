@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <body>
+    <div id="root">
+    </div>
+    assignment9
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // My Code goes here;
+    function Birthdaycard(props){
+      return(
+        <>
+        <h1> Today is the birthday of {props.receipentsname} ,{props.custommessage}!  </h1>
+       
+        </>
+      )
+    }
+   
+   //ha.textContent=" ramu"
+    function Greeting(){
+      return ( 
+        <>
+        <input id="name" placeholder="enter the name "/>
+      <input id="greet" placeholder="enter the greeting"/>
+    
+   
+    <button onClick={ input} > write message</button>
+       <Birthdaycard receipentsname= {name} custommessage={"HAPPY BIRTHDAY "}/>
+       <h1 id="h" > </h1>
+    </>
+    
+       )
+      
+      }
+      function input(){
+        let name= document.getElementById("name").value  
+    let greet=document.getElementById("greet").value
+  let ha=document.getElementById("h")
+  ha.textContent=name +greet;
+  return name;
+      }
+      let root=document.getElementById("root")
+      let btnn=ReactDOM.createRoot(root)
+  btnn.render(<Greeting/>)
+
+  </script>
+</html>
